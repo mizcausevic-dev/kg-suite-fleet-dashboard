@@ -1,0 +1,31 @@
+{
+  "name": "kg-suite-fleet-dashboard",
+  "version": "0.1.0",
+  "description": "Single-file static HTML operator dashboard for the Kinetic Gain Protocol Suite. Posture across 6 vertical 6-packs = 36 sibling spec repos × 5 cross-cutting invariants. Companion to kg-suite-vertical-router + kg-suite-vertical-comparator.",
+  "type": "module",
+  "scripts": {
+    "test": "node tests/dashboard.test.mjs",
+    "serve": "node -e \"const http=require('node:http');const fs=require('node:fs');const path=require('node:path');const port=process.env.PORT||8765;http.createServer((req,res)=>{const p=req.url==='/'?'/index.html':req.url;const f=path.join(process.cwd(),p);if(!fs.existsSync(f)||fs.statSync(f).isDirectory()){res.writeHead(404);return res.end('not found');}const ext=path.extname(f);const ct={'.html':'text/html','.css':'text/css','.js':'application/javascript','.json':'application/json'}[ext]||'text/plain';res.writeHead(200,{'content-type':ct});fs.createReadStream(f).pipe(res);}).listen(port,()=>console.log('http://localhost:'+port));\""
+  },
+  "files": [
+    "index.html",
+    "assets/",
+    "data/",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "kinetic-gain-protocol-suite",
+    "ai-governance",
+    "fleet-dashboard",
+    "operator-dashboard",
+    "cross-vertical",
+    "static-html"
+  ],
+  "repository": "github:mizcausevic-dev/kg-suite-fleet-dashboard",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

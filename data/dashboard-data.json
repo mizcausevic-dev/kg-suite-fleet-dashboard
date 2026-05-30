@@ -1,0 +1,66 @@
+{
+  "generated_at": "2026-05-29",
+  "summary": {
+    "vertical_count": 6,
+    "shape_count": 6,
+    "sibling_repo_count": 36,
+    "cross_cutting_invariant_count": 5,
+    "horizontal_tool_count": 2,
+    "buyer_facing_landing_count": 7
+  },
+  "verticals": [
+    {"code": "healthtech", "name": "HealthTech",              "tagline": "FDA SaMD + HIPAA + Section 1557 + IMDRF",                                                            "canonical_buyer": "St Mary Hospital",                "innovation_pill": "Fitzpatrick + Section 1557 bias dims"},
+    {"code": "edtech",     "name": "EdTech",                  "tagline": "FERPA + COPPA + IDEA / Section 504 + ESSA",                                                          "canonical_buyer": "Lincoln Unified SD",              "innovation_pill": "ESSA subgroups + WIDA EL proficiency"},
+    {"code": "proptech",   "name": "PropTech / Real Estate",  "tagline": "RESPA + ECOA + Fair Housing + HMDA + GLBA + CFPB UDAAP",                                              "canonical_buyer": "Pacific Coast Mortgage",           "innovation_pill": "EEOC four-fifths-rule + LTV/DTI bands"},
+    {"code": "insurtech",  "name": "Insurance / InsurTech",   "tagline": "NAIC AI Model Bulletin + NY DFS CL 7 + CO SB 21-169",                                                "canonical_buyer": "Coastguard Insurance",             "innovation_pill": "actuarial-soundness-defended status"},
+    {"code": "hrtech",     "name": "HR Tech / Employment AI", "tagline": "EEOC + ADA + ADEA + GINA + NYC LL 144 + IL 820 ILCS 42 + MD HB 1202",                                "canonical_buyer": "MomentumHR Inc.",                  "innovation_pill": "two orthogonal invariants + sub-state"},
+    {"code": "fintech",    "name": "FinTech",                 "tagline": "CFPB + OCC/FRB/FDIC joint AI + ECOA + FCRA + GLBA + BSA/AML + Section 1071 + Section 1033",         "canonical_buyer": "Meridian Financial",                "innovation_pill": "FCRA permissible-purpose + redlining"}
+  ],
+  "shapes": [
+    {"code": "audit-stream",      "name": "Operator audit-stream",            "description": "Per-decision hash-chained AI-tool-access events"},
+    {"code": "state-tracker",     "name": "Operator state-tracker",            "description": "Per-jurisdiction regulatory-lifecycle ledger"},
+    {"code": "compliance-bundle", "name": "Evidence Bundle (compliance)",     "description": "Vertical's federal-floor obligation families"},
+    {"code": "bias-bundle",       "name": "Evidence Bundle (bias)",            "description": "Pre-deployment + ongoing bias / equity coverage"},
+    {"code": "incident-card",     "name": "Incident Card",                     "description": "AI consumer-harm event taxonomy + regulator-referral"},
+    {"code": "vault-contract",    "name": "Decision Card vault contract",      "description": "Tokenized / pseudonymized / cleartext access governance"}
+  ],
+  "matrix": {
+    "healthtech":  {"audit-stream": "fhir-resource-access-audit",          "state-tracker": "fda-samd-classification-board",       "compliance-bundle": "hipaa-readiness-evidence-bundle",       "bias-bundle": "clinical-bias-cohort-coverage-lab",   "incident-card": "medical-adverse-event-incident-card",      "vault-contract": "phi-vault-contract-profile"},
+    "edtech":      {"audit-stream": "student-data-access-audit-stream",    "state-tracker": "state-ai-disclosure-state-tracker",   "compliance-bundle": "ferpa-readiness-evidence-bundle",       "bias-bundle": "student-cohort-bias-coverage-lab",     "incident-card": "ai-student-record-incident-card-profile",  "vault-contract": "pii-student-vault-contract-profile"},
+    "proptech":    {"audit-stream": "mortgage-decision-record-audit-stream","state-tracker": "state-real-estate-ai-disclosure-tracker","compliance-bundle": "respa-readiness-evidence-bundle",      "bias-bundle": "mortgage-applicant-bias-coverage-lab", "incident-card": "title-chain-evidence-incident-card-profile","vault-contract": "mls-data-access-vault-contract-profile"},
+    "insurtech":   {"audit-stream": "insurance-decision-record-audit-stream","state-tracker": "state-insurance-ai-disclosure-tracker", "compliance-bundle": "naic-ai-bulletin-readiness-evidence-bundle","bias-bundle": "insurance-applicant-bias-coverage-lab","incident-card": "unfair-discrimination-incident-card-profile","vault-contract": "policyholder-data-vault-contract-profile"},
+    "hrtech":      {"audit-stream": "employment-decision-record-audit-stream","state-tracker": "state-employment-ai-disclosure-tracker","compliance-bundle": "eeoc-readiness-evidence-bundle",      "bias-bundle": "employment-candidate-bias-coverage-lab","incident-card": "employment-ai-incident-card-profile",      "vault-contract": "candidate-data-vault-contract-profile"},
+    "fintech":     {"audit-stream": "financial-decision-record-audit-stream","state-tracker": "state-financial-ai-disclosure-tracker", "compliance-bundle": "cfpb-readiness-evidence-bundle",       "bias-bundle": "financial-applicant-bias-coverage-lab","incident-card": "financial-ai-incident-card-profile",         "vault-contract": "financial-customer-data-vault-contract-profile"}
+  },
+  "cross_cutting_invariants": [
+    {"code": "human-in-loop",        "name": "Human-in-loop on adverse-action-capable AI decisions"},
+    {"code": "adverse-action-notice","name": "Adverse-action notice + statutory reason codes"},
+    {"code": "four-fifths-rule",     "name": "Disparate-impact / bias measurement threshold"},
+    {"code": "protected-class-vault","name": "Protected-class data handling in vault contract"},
+    {"code": "regulator-referral",   "name": "Regulator-referral pathway evaluation discipline"}
+  ],
+  "invariant_matrix": {
+    "healthtech":  {"human-in-loop": "scoped",     "adverse-action-notice": "HIPAA breach + clinical doc",                "four-fifths-rule": "Section 1557-aligned",   "protected-class-vault": "HIPAA 18 Safe Harbor",                       "regulator-referral": "FDA + state DOH"},
+    "edtech":      {"human-in-loop": "N/A",         "adverse-action-notice": "FERPA RoD + state breach",                   "four-fifths-rule": "ESSA subgroup",          "protected-class-vault": "FERPA 7 + COPPA 10",                          "regulator-referral": "DoE OCR + FTC + state-AG"},
+    "proptech":    {"human-in-loop": "universal",   "adverse-action-notice": "ECOA 1002.9 30-day + RESPA",                "four-fifths-rule": "canonical (EEOC)",        "protected-class-vault": "ECOA + Fair Housing",                         "regulator-referral": "CFPB + DOJ + HUD + state DFPI/DFS"},
+    "insurtech":   {"human-in-loop": "scoped+capable","adverse-action-notice": "FCRA §615 + state DOI",                    "four-fifths-rule": "applicable + actuarial-soundness", "protected-class-vault": "CO SB 21-169 + NOT model input",        "regulator-referral": "State DOI + NAIC MCAS + 6 pathways"},
+    "hrtech":      {"human-in-loop": "scoped+capable","adverse-action-notice": "EEOC reconciled adverse-action",            "four-fifths-rule": "EEOC + UGESP 2-SD",      "protected-class-vault": "EEOC/OFCCP segregation",                     "regulator-referral": "EEOC + state CR + NYC DCWP + OFCCP + 7 pathways"},
+    "fintech":     {"human-in-loop": "scoped+capable","adverse-action-notice": "ECOA 1002.9 + FCRA §615",                   "four-fifths-rule": "EEOC + business-necessity + redlining", "protected-class-vault": "ECOA + Section 1071 firewall + NOT input", "regulator-referral": "CFPB + OCC/FRB/FDIC/NCUA + 9 pathways"}
+  },
+  "horizontal_tools": [
+    {
+      "code": "router",
+      "name": "kg-suite-vertical-router",
+      "tagline": "Routes any Suite artifact to the right vertical-specific verification",
+      "url": "https://github.com/mizcausevic-dev/kg-suite-vertical-router",
+      "cli": "kg-suite-route artifact.json"
+    },
+    {
+      "code": "comparator",
+      "name": "kg-suite-vertical-comparator",
+      "tagline": "Generates cross-vertical comparison Markdown + JSON; per-artifact diff",
+      "url": "https://github.com/mizcausevic-dev/kg-suite-vertical-comparator",
+      "cli": "kg-suite-compare > REPORT.md"
+    }
+  ]
+}
