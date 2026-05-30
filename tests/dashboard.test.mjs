@@ -12,12 +12,12 @@ function check(name, condition, msg) {
 }
 
 check("summary present",       !!data.summary);
-check("summary.vertical_count = 6",  data.summary.vertical_count === 6);
-check("summary.shape_count = 6",     data.summary.shape_count === 6);
-check("summary.sibling_repo_count = 36", data.summary.sibling_repo_count === 36);
-check("summary.cross_cutting_invariant_count = 5", data.summary.cross_cutting_invariant_count === 5);
+check("summary.vertical_count matches verticals.length",  data.summary.vertical_count === data.verticals.length);
+check("summary.shape_count = 6",                          data.summary.shape_count === 6);
+check("summary.sibling_repo_count = verticals × 6 shapes", data.summary.sibling_repo_count === data.verticals.length * 6);
+check("summary.cross_cutting_invariant_count = 5",         data.summary.cross_cutting_invariant_count === 5);
 
-check("verticals array length = 6", data.verticals.length === 6);
+check("verticals array length >= 7 (current floor after GovTech)", data.verticals.length >= 7);
 check("shapes array length = 6",     data.shapes.length === 6);
 
 // Matrix completeness: every vertical has every shape
