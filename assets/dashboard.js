@@ -18,6 +18,10 @@
     document.getElementById("stat-shapes").textContent     = summary.shape_count;
     document.getElementById("stat-repos").textContent      = summary.sibling_repo_count;
     document.getElementById("stat-invariants").textContent = summary.cross_cutting_invariant_count;
+    const refImplStat = document.getElementById("stat-refimpls");
+    if (refImplStat && typeof summary.reference_implementation_count === "number") {
+      refImplStat.textContent = summary.reference_implementation_count;
+    }
   }
 
   function renderVerticalGrid(verticals) {
@@ -78,6 +82,26 @@
     table.innerHTML = html;
   }
 
+  function renderReferenceImplementations(refImpls, verticals) {
+    const table = document.getElementById("refimpl-table");
+    if (!table) return;  // section may not be present in older index.html versions
+    // Build a vertical-name lookup so we can show the friendly name, not just the code.
+    const verticalName = Object.fromEntries(verticals.map((v) => [v.code, v.name]));
+    let html = "<thead><tr><th>Vertical</th><th>Reference impl (AGPL-3.0)</th><th>Kind prefix</th><th>Wall-clock pattern</th><th>Headline invariant</th></tr></thead><tbody>";
+    for (const r of refImpls) {
+      const name = verticalName[r.vertical_code] || r.vertical_code;
+      html += `<tr>
+        <td><strong>${escapeHtml(name)}</strong></td>
+        <td><a href="${REPO_URL(r.repo)}"><code>${escapeHtml(r.repo)}</code></a></td>
+        <td><code>${escapeHtml(r.ref_impl_kind_prefix)}</code></td>
+        <td>${escapeHtml(r.wall_clock_pattern)}</td>
+        <td>${escapeHtml(r.headline_invariant)}</td>
+      </tr>`;
+    }
+    html += "</tbody>";
+    table.innerHTML = html;
+  }
+
   function renderTools(tools) {
     const grid = document.getElementById("tool-grid");
     grid.innerHTML = tools.map((t) => `
@@ -111,6 +135,9 @@
       renderVerticalGrid(data.verticals);
       renderShapeTable(data.verticals, data.shapes, data.matrix);
       renderInvariantTable(data.verticals, data.cross_cutting_invariants, data.invariant_matrix);
+      if (Array.isArray(data.reference_implementations)) {
+        renderReferenceImplementations(data.reference_implementations, data.verticals);
+      }
       renderTools(data.horizontal_tools);
       renderGeneratedAt(data.generated_at);
     })

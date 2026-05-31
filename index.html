@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Kinetic Gain Protocol Suite — Fleet Dashboard</title>
-  <meta name="description" content="Operator dashboard for the Kinetic Gain Protocol Suite. Posture across 6 vertical 6-packs = 36 sibling spec repos × 5 cross-cutting invariants. Per-vertical posture cards, per-shape cross-vertical view, invariant compliance matrix, and one-click links to the router + comparator horizontal composition tools." />
+  <meta name="description" content="Operator dashboard for the Kinetic Gain Protocol Suite. Posture across 10 vertical 6-packs = 60 sibling spec repos × 5 cross-cutting invariants + 10 AGPL-3.0 reference implementations (one per vertical). Per-vertical posture cards, per-shape cross-vertical view, invariant compliance matrix, ref-impl wall-clock pattern catalog, and one-click links to the router + comparator horizontal composition tools." />
   <meta name="theme-color" content="#10b981" />
   <link rel="canonical" href="https://mizcausevic-dev.github.io/kg-suite-fleet-dashboard/" />
 
@@ -13,7 +13,7 @@
 
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Kinetic Gain Protocol Suite — Fleet Dashboard" />
-  <meta property="og:description" content="Posture across 6 vertical 6-packs = 36 sibling spec repos × 5 cross-cutting invariants. Operator dashboard for AI governance procurement teams." />
+  <meta property="og:description" content="Posture across 10 vertical 6-packs = 60 sibling spec repos × 5 cross-cutting invariants + 10 AGPL-3.0 reference implementations. Operator dashboard for AI governance procurement teams." />
 
   <link rel="stylesheet" href="assets/style.css" />
 </head>
@@ -24,13 +24,14 @@
         <span class="brand-mark">KG</span>
         <span class="brand-text">
           <strong>Suite Fleet Dashboard</strong>
-          <small>POSTURE ACROSS 6 VERTICAL 6-PACKS</small>
+          <small>POSTURE ACROSS 10 VERTICAL 6-PACKS + 10 REF IMPLS</small>
         </span>
       </a>
       <nav class="nav-links">
         <a href="#verticals">Verticals</a>
         <a href="#shapes">Shapes</a>
         <a href="#invariants">Invariants</a>
+        <a href="#refimpls">Ref impls</a>
         <a href="#tools">Tools</a>
         <a class="cta" href="https://github.com/mizcausevic-dev/kg-suite-fleet-dashboard">GitHub</a>
       </nav>
@@ -40,14 +41,15 @@
   <section class="hero">
     <div class="hero-inner">
       <span class="pill">Kinetic Gain Protocol Suite</span>
-      <h1>Fleet Dashboard.<br /><em>One view across six regulated verticals.</em></h1>
-      <p class="lede">Operator dashboard showing the Kinetic Gain Protocol Suite's posture across all six vertical 6-packs — HealthTech, EdTech, PropTech, Insurance / InsurTech, HR Tech, FinTech. Same six canonical artifact shapes in every vertical; different per-vertical regulatory basis, data categories, and invariants. Use this view to audit Suite coverage, identify cross-vertical patterns, and route procurement decisions across mixed AI-vendor portfolios.</p>
+      <h1>Fleet Dashboard.<br /><em>One view across ten regulated verticals.</em></h1>
+      <p class="lede">Operator dashboard showing the Kinetic Gain Protocol Suite's posture across all ten vertical 6-packs — HealthTech, EdTech, PropTech, Insurance / InsurTech, HR Tech, FinTech, GovTech, LegalTech, EnergyTech, DefenseTech. Same six canonical artifact shapes in every vertical; different per-vertical regulatory basis, data categories, and invariants. Each vertical now has a working AGPL-3.0 reference implementation proving the audit-stream invariants end-to-end. Use this view to audit Suite coverage, identify cross-vertical patterns, and route procurement decisions across mixed AI-vendor portfolios.</p>
 
       <div class="stats">
         <div class="stat"><span class="stat-num" id="stat-verticals">—</span><span class="stat-label">verticals</span></div>
         <div class="stat"><span class="stat-num" id="stat-shapes">—</span><span class="stat-label">canonical shapes</span></div>
         <div class="stat"><span class="stat-num" id="stat-repos">—</span><span class="stat-label">sibling spec repos</span></div>
         <div class="stat"><span class="stat-num" id="stat-invariants">—</span><span class="stat-label">cross-cutting invariants</span></div>
+        <div class="stat"><span class="stat-num" id="stat-refimpls">—</span><span class="stat-label">reference impls (AGPL)</span></div>
       </div>
     </div>
   </section>
@@ -55,7 +57,7 @@
   <main>
     <section id="verticals" class="block">
       <div class="block-inner">
-        <h2>The six regulated verticals</h2>
+        <h2>The ten regulated verticals</h2>
         <p class="block-lede">Every vertical has all six canonical shapes. Each card links to the suite hub's per-vertical mini-landing.</p>
         <div class="vertical-grid" id="vertical-grid"></div>
       </div>
@@ -64,7 +66,7 @@
     <section id="shapes" class="block-dark">
       <div class="block-inner">
         <h2>Cross-vertical posture by shape</h2>
-        <p class="block-lede">For each of the six canonical shapes, all six verticals have the corresponding sibling spec repo. Click any cell to open the repo.</p>
+        <p class="block-lede">For each of the six canonical shapes, all ten verticals have the corresponding sibling spec repo. Click any cell to open the repo.</p>
         <div class="shape-table-wrapper">
           <table class="shape-table" id="shape-table"></table>
         </div>
@@ -81,14 +83,24 @@
       </div>
     </section>
 
+    <section id="refimpls" class="block">
+      <div class="block-inner">
+        <h2>Reference implementations — one per vertical (AGPL-3.0)</h2>
+        <p class="block-lede">Every vertical now has working code proving its audit-stream spec invariants survive a real hash-chained trajectory end-to-end. Specs stay MIT for maximum implementation freedom; reference impls are AGPL-3.0. Together they exercise <strong>five distinct wall-clock invariant patterns</strong> the Suite supports.</p>
+        <div class="refimpl-table-wrapper">
+          <table class="refimpl-table" id="refimpl-table"></table>
+        </div>
+      </div>
+    </section>
+
     <section id="tools" class="block-dark">
       <div class="block-inner">
         <h2>Horizontal composition tools</h2>
-        <p class="block-lede">Two npm packages + GitHub Actions that compose across all 36 sibling spec repos.</p>
+        <p class="block-lede">Two npm packages + GitHub Actions that compose across all 60 sibling spec repos AND all 10 reference implementations. The router (v0.2+) auto-detects both spec-shape and ref-impl-shape audit-stream events from the same CLI command.</p>
         <div class="tool-grid" id="tool-grid"></div>
         <div class="cta-row">
           <a class="btn btn-primary" href="https://github.com/mizcausevic-dev/kg-suite-vertical-comparator/blob/main/docs/CROSS-VERTICAL-COMPARISON.md">Read the cross-vertical comparison →</a>
-          <a class="btn btn-secondary" href="https://suite.kineticgain.com/verticals/">Browse all six verticals →</a>
+          <a class="btn btn-secondary" href="https://suite.kineticgain.com/verticals/">Browse all ten verticals →</a>
         </div>
       </div>
     </section>

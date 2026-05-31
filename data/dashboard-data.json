@@ -1,10 +1,11 @@
 {
-  "generated_at": "2026-05-30",
+  "generated_at": "2026-05-31",
   "summary": {
     "vertical_count": 10,
     "shape_count": 6,
     "sibling_repo_count": 60,
     "cross_cutting_invariant_count": 5,
+    "reference_implementation_count": 10,
     "horizontal_tool_count": 2,
     "buyer_facing_landing_count": 11
   },
@@ -63,7 +64,7 @@
     {
       "code": "router",
       "name": "kg-suite-vertical-router",
-      "tagline": "Routes any Suite artifact to the right vertical-specific verification",
+      "tagline": "Routes any Suite artifact to the right vertical-specific verification across 10 verticals + dual-shape (spec + ref-impl)",
       "url": "https://github.com/mizcausevic-dev/kg-suite-vertical-router",
       "cli": "kg-suite-route artifact.json"
     },
@@ -74,5 +75,17 @@
       "url": "https://github.com/mizcausevic-dev/kg-suite-vertical-comparator",
       "cli": "kg-suite-compare > REPORT.md"
     }
+  ],
+  "reference_implementations": [
+    {"vertical_code": "healthtech",  "repo": "fhir-resource-access-audit-reference",          "ref_impl_kind_prefix": "fhir.",       "wall_clock_pattern": "n/a",                                 "headline_invariant": "HIPAA Safe-Harbor vault contract + hash-chained FHIR resource access events re-validated against spec JSON Schema in CI"},
+    {"vertical_code": "edtech",      "repo": "student-data-access-audit-stream-reference",     "ref_impl_kind_prefix": "edtech.",     "wall_clock_pattern": "must-precede-event",                    "headline_invariant": "FERPA basis enumeration (34 CFR Part 99) + COPPA verifiable parental consent must precede event timestamp for student_age < 13 (16 CFR §312.4)"},
+    {"vertical_code": "proptech",    "repo": "mortgage-decision-record-audit-stream-reference","ref_impl_kind_prefix": "proptech.",   "wall_clock_pattern": "anchored-on-completed-application",     "headline_invariant": "UNIVERSAL human-underwriter rule (only Suite vertical with universal-not-scoped human gate) + ECOA Reg B 30-day adverse-action notice anchored on application_completed_at per 12 CFR §1002.9"},
+    {"vertical_code": "insurtech",   "repo": "insurance-decision-record-audit-stream-reference","ref_impl_kind_prefix": "insurtech.",  "wall_clock_pattern": "bounded-backward-window",                "headline_invariant": "Scoped human-adjudicator on adverse-action-capable + adverse recommendation + NAIC Model Bulletin on AI 90-day backward-bounded bias-monitoring window (must precede event)"},
+    {"vertical_code": "hrtech",      "repo": "employment-decision-record-audit-stream-reference","ref_impl_kind_prefix": "hrtech.",     "wall_clock_pattern": "backward-before-event",                   "headline_invariant": "NYC LL 144 14-day backward-before-event candidate-notice window + EEOC four-fifths-rule bias-audit timestamp bound"},
+    {"vertical_code": "fintech",     "repo": "financial-decision-record-audit-stream-reference","ref_impl_kind_prefix": "fintech.",    "wall_clock_pattern": "anchored-on-event",                       "headline_invariant": "FCRA §604 permissible-purpose enumeration on credit-bureau resource pulls + ECOA timing-of-credit-decision binding"},
+    {"vertical_code": "govtech",     "repo": "government-decision-record-audit-stream-reference","ref_impl_kind_prefix": "govtech.",   "wall_clock_pattern": "must-precede-event",                     "headline_invariant": "OMB M-24-10 impact-assessment completed before deployment precondition + rights-impacting vs safety-impacting disambiguation"},
+    {"vertical_code": "legaltech",   "repo": "matter-decision-record-audit-stream-reference",   "ref_impl_kind_prefix": "legaltech.",  "wall_clock_pattern": "n/a",                                   "headline_invariant": "Privilege-tier consistency + engagement-letter binding + citation-validation-before-production-ready (THREE simultaneous invariants — only Suite ref impl with that density)"},
+    {"vertical_code": "energytech",  "repo": "grid-decision-record-audit-stream-reference",     "ref_impl_kind_prefix": "energytech.", "wall_clock_pattern": "forward-from-event",                     "headline_invariant": "NERC CIP-008 1-hour forward cyber-incident reporting wall clock (shortest in the Suite catalog)"},
+    {"vertical_code": "defensetech", "repo": "defense-decision-record-audit-stream-reference",  "ref_impl_kind_prefix": "defensetech.","wall_clock_pattern": "forward-from-event",                      "headline_invariant": "DFARS 252.204-7012(c)(1)(ii) 72-hour forward cyber-incident clock + CUI 3-axis vault contract cross-binding (cui_categorization × export_control_status × foreign_person_access_restriction)"}
   ]
 }

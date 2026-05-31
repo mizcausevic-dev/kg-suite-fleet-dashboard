@@ -147,16 +147,16 @@ a:hover { text-decoration: underline; }
   font-weight: 600; font-size: 0.9rem;
 }
 
-/* Shape table */
-.shape-table-wrapper, .invariant-table-wrapper {
+/* Shape / invariant / refimpl tables */
+.shape-table-wrapper, .invariant-table-wrapper, .refimpl-table-wrapper {
   overflow-x: auto; border: 1px solid var(--slate-800);
   border-radius: 12px;
 }
-.shape-table, .invariant-table {
+.shape-table, .invariant-table, .refimpl-table {
   width: 100%; border-collapse: collapse;
   font-size: 0.88rem;
 }
-.shape-table thead th, .invariant-table thead th {
+.shape-table thead th, .invariant-table thead th, .refimpl-table thead th {
   background: var(--slate-900); color: var(--emerald-400);
   font-family: var(--font-mono); font-size: 0.72rem;
   text-transform: uppercase; letter-spacing: 0.08em;
@@ -164,18 +164,21 @@ a:hover { text-decoration: underline; }
   border-bottom: 2px solid var(--slate-800);
   position: sticky; top: 0;
 }
-.shape-table tbody td, .invariant-table tbody td {
+.shape-table tbody td, .invariant-table tbody td, .refimpl-table tbody td {
   padding: 0.75rem; border-bottom: 1px solid var(--slate-800);
   vertical-align: top; color: var(--slate-200);
 }
-.shape-table tbody tr:hover, .invariant-table tbody tr:hover {
+.shape-table tbody tr:hover, .invariant-table tbody tr:hover, .refimpl-table tbody tr:hover {
   background: rgba(15, 23, 42, 0.5);
 }
-.shape-table tbody td:first-child, .invariant-table tbody td:first-child {
-  font-weight: 600; color: #fff; min-width: 220px;
+.shape-table tbody td:first-child, .invariant-table tbody td:first-child, .refimpl-table tbody td:first-child {
+  font-weight: 600; color: #fff; min-width: 200px;
 }
-.shape-table td a { color: var(--emerald-400); font-family: var(--font-mono); font-size: 0.8rem; }
-.shape-table td a:hover { color: var(--emerald-300); }
+.shape-table td a, .refimpl-table td a { color: var(--emerald-400); font-family: var(--font-mono); font-size: 0.8rem; }
+.shape-table td a:hover, .refimpl-table td a:hover { color: var(--emerald-300); }
+.refimpl-table tbody td:nth-child(3) { font-family: var(--font-mono); font-size: 0.78rem; color: var(--slate-300); white-space: nowrap; }
+.refimpl-table tbody td:nth-child(4) { font-family: var(--font-mono); font-size: 0.76rem; color: var(--emerald-400); white-space: nowrap; }
+.refimpl-table tbody td:nth-child(5) { font-size: 0.82rem; color: var(--slate-300); }
 
 .invariant-cell-scope {
   font-size: 0.78rem; color: var(--slate-300);

@@ -1,7 +1,7 @@
 {
   "name": "kg-suite-fleet-dashboard",
-  "version": "0.1.0",
-  "description": "Single-file static HTML operator dashboard for the Kinetic Gain Protocol Suite. Posture across 6 vertical 6-packs = 36 sibling spec repos × 5 cross-cutting invariants. Companion to kg-suite-vertical-router + kg-suite-vertical-comparator.",
+  "version": "0.2.0",
+  "description": "Single-file static HTML operator dashboard for the Kinetic Gain Protocol Suite. Posture across 10 vertical 6-packs = 60 sibling spec repos × 5 cross-cutting invariants + 10 AGPL-3.0 reference implementations. Companion to kg-suite-vertical-router + kg-suite-vertical-comparator.",
   "type": "module",
   "scripts": {
     "test": "node tests/dashboard.test.mjs",

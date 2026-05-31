@@ -16,9 +16,27 @@ check("summary.vertical_count matches verticals.length",  data.summary.vertical_
 check("summary.shape_count = 6",                          data.summary.shape_count === 6);
 check("summary.sibling_repo_count = verticals × 6 shapes", data.summary.sibling_repo_count === data.verticals.length * 6);
 check("summary.cross_cutting_invariant_count = 5",         data.summary.cross_cutting_invariant_count === 5);
+check("summary.reference_implementation_count = 10",       data.summary.reference_implementation_count === 10);
 
-check("verticals array length >= 7 (current floor after GovTech)", data.verticals.length >= 7);
+check("verticals array length = 10 (full 10/10 coverage)", data.verticals.length === 10);
 check("shapes array length = 6",     data.shapes.length === 6);
+
+// reference_implementations array: one per vertical, with required fields
+check("reference_implementations array present", Array.isArray(data.reference_implementations));
+check("reference_implementations length = 10",   data.reference_implementations?.length === 10);
+const refImplVerticalCodes = new Set((data.reference_implementations || []).map((r) => r.vertical_code));
+for (const v of data.verticals) {
+  check(`reference impl present for vertical ${v.code}`, refImplVerticalCodes.has(v.code));
+}
+for (const r of (data.reference_implementations || [])) {
+  check(`ref impl ${r.repo} has required fields (vertical_code/repo/ref_impl_kind_prefix/wall_clock_pattern/headline_invariant)`,
+    typeof r.vertical_code === "string" && r.vertical_code.length > 0 &&
+    typeof r.repo === "string" && r.repo.length > 0 &&
+    typeof r.ref_impl_kind_prefix === "string" && r.ref_impl_kind_prefix.endsWith(".") &&
+    typeof r.wall_clock_pattern === "string" && r.wall_clock_pattern.length > 0 &&
+    typeof r.headline_invariant === "string" && r.headline_invariant.length > 0
+  );
+}
 
 // Matrix completeness: every vertical has every shape
 for (const v of data.verticals) {
