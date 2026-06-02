@@ -1,6 +1,6 @@
 # kg-suite-fleet-dashboard
 
-> **Kinetic Gain Protocol Suite Fleet Dashboard v0.2.** Single-file static HTML operator dashboard showing Suite-wide posture across all 10 vertical 6-packs = 60 sibling spec repos × 5 cross-cutting invariants + 10 AGPL-3.0 reference implementations × 2 horizontal composition tools. Built for AI-governance procurement teams operating across mixed regulated-vertical AI vendor portfolios. Dark-themed, no framework, no build step. GitHub Pages-deployable.
+> **Kinetic Gain Protocol Suite Fleet Dashboard v0.2.** Single-file static HTML operator dashboard showing Suite-wide posture across all 11 vertical 6-packs = 66 sibling spec repos × 5 cross-cutting invariants + 10 AGPL-3.0 reference implementations (covering 10 of 11 verticals — RetailTech ref impl pending) × 2 horizontal composition tools. Built for AI-governance procurement teams operating across mixed regulated-vertical AI vendor portfolios. Dark-themed, no framework, no build step. GitHub Pages-deployable.
 
 [![CI](https://github.com/mizcausevic-dev/kg-suite-fleet-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/mizcausevic-dev/kg-suite-fleet-dashboard/actions/workflows/ci.yml)
 
@@ -12,7 +12,7 @@ Live at: <https://mizcausevic-dev.github.io/kg-suite-fleet-dashboard/>
 
 | Section | Purpose |
 | --- | --- |
-| **Hero** | Live counters: 10 verticals, 6 canonical shapes, 60 sibling spec repos, 5 cross-cutting invariants, **10 reference implementations** |
+| **Hero** | Live counters: 10 verticals, 6 canonical shapes, 66 sibling spec repos, 5 cross-cutting invariants, **10 reference implementations** |
 | **Per-vertical posture cards** | One card per vertical with tagline, canonical buyer, key design innovation, link to its mini-landing on suite.kineticgain.com |
 | **Cross-vertical posture by shape** | Table showing all 60 sibling repos at a glance — every (vertical × shape) cell links to its actual repo |
 | **Cross-cutting invariant compliance matrix** | 5-invariant × 10-vertical matrix showing how the same conceptual invariant is named / scoped / enforced per vertical |
@@ -59,7 +59,7 @@ To deploy under a custom subdomain (e.g. `fleet.kineticgain.com`):
 
 | Repo | Role |
 | --- | --- |
-| All 60 sibling spec repos across the 10 vertical 6-packs | The artifacts whose posture the dashboard reflects |
+| All 66 sibling spec repos across the 11 vertical 6-packs | The artifacts whose posture the dashboard reflects |
 | All 10 AGPL-3.0 reference implementations (one per vertical) | The working code surfaced in the "Reference implementations" section |
 | [`kg-suite-vertical-router`](https://github.com/mizcausevic-dev/kg-suite-vertical-router) | Featured tool: route any artifact to the right vertical-specific verification |
 | [`kg-suite-vertical-comparator`](https://github.com/mizcausevic-dev/kg-suite-vertical-comparator) | Featured tool: generate cross-vertical comparison Markdown + JSON tables |

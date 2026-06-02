@@ -1,70 +1,322 @@
 {
   "generated_at": "2026-05-31",
   "summary": {
-    "vertical_count": 10,
+    "vertical_count": 11,
     "shape_count": 6,
-    "sibling_repo_count": 60,
+    "sibling_repo_count": 66,
     "cross_cutting_invariant_count": 5,
     "reference_implementation_count": 10,
     "horizontal_tool_count": 2,
-    "buyer_facing_landing_count": 11
+    "buyer_facing_landing_count": 12,
+    "reference_implementation_coverage": "10/11"
   },
   "verticals": [
-    {"code": "healthtech", "name": "HealthTech",              "tagline": "FDA SaMD + HIPAA + Section 1557 + IMDRF",                                                            "canonical_buyer": "St Mary Hospital",                "innovation_pill": "Fitzpatrick + Section 1557 bias dims"},
-    {"code": "edtech",     "name": "EdTech",                  "tagline": "FERPA + COPPA + IDEA / Section 504 + ESSA",                                                          "canonical_buyer": "Lincoln Unified SD",              "innovation_pill": "ESSA subgroups + WIDA EL proficiency"},
-    {"code": "proptech",   "name": "PropTech / Real Estate",  "tagline": "RESPA + ECOA + Fair Housing + HMDA + GLBA + CFPB UDAAP",                                              "canonical_buyer": "Pacific Coast Mortgage",           "innovation_pill": "EEOC four-fifths-rule + LTV/DTI bands"},
-    {"code": "insurtech",  "name": "Insurance / InsurTech",   "tagline": "NAIC AI Model Bulletin + NY DFS CL 7 + CO SB 21-169",                                                "canonical_buyer": "Coastguard Insurance",             "innovation_pill": "actuarial-soundness-defended status"},
-    {"code": "hrtech",     "name": "HR Tech / Employment AI", "tagline": "EEOC + ADA + ADEA + GINA + NYC LL 144 + IL 820 ILCS 42 + MD HB 1202",                                "canonical_buyer": "MomentumHR Inc.",                  "innovation_pill": "two orthogonal invariants + sub-state"},
-    {"code": "fintech",    "name": "FinTech",                 "tagline": "CFPB + OCC/FRB/FDIC joint AI + ECOA + FCRA + GLBA + BSA/AML + Section 1071 + Section 1033",         "canonical_buyer": "Meridian Financial",                "innovation_pill": "FCRA permissible-purpose + redlining"},
-    {"code": "govtech",    "name": "GovTech / Public Sector AI", "tagline": "OMB M-24-10 + AI Bill of Rights + Section 508 + Privacy Act + FOIA + NIST AI RMF + FedRAMP",     "canonical_buyer": "Pacific Region Federal Services Agency (PRFSA)", "innovation_pill": "Federal AI Use Case Inventory + classification-clearance + Title VI LEP"},
-    {"code": "legaltech",  "name": "LegalTech / AI in the Practice of Law", "tagline": "ABA Model Rules 1.1c8 + 1.6 + 3.3 + 5.3 + 5.5 + attorney-client privilege + work-product doctrine + state bar opinions + Mata v. Avianca court orders", "canonical_buyer": "Anchor & Reef LLP", "innovation_pill": "privilege_tier as first-class field + cross-matter-firewall + COMPAS-cautionary detector + Batson pattern"},
-    {"code": "energytech", "name": "EnergyTech / Grid + Pipeline Operations", "tagline": "NERC CIP-002 through CIP-014 + TSA SD-2021-02C + DOE EO 14028 + FERC Order 2222 + state PUC orders (CA / NY / TX / MA / IL / WA)", "canonical_buyer": "Continental Grid Operator (CGO)", "innovation_pill": "bes_cyber_system_categorization + ot_it_boundary cross-bound across 3 repos + CIP-008 1-hour wall-clock invariant + medical-baseline-tokenized-with-flag"},
-    {"code": "defensetech", "name": "DefenseTech / DIB AI Tooling", "tagline": "DFARS 252.204-7012/7019/7020/7021 + CMMC 2.0 L2/L3 + NIST SP 800-171 r2 + 800-172 + ITAR (22 CFR 120-130) + EAR (15 CFR 730-774) + deemed export + EO 13526 + ICD 705 + DoDI 5230.24 + CUI Notice 2020-04 + NISPOM 32 CFR 117 + FAR 52.204-21 + False Claims Act", "canonical_buyer": "Stratos Aerospace (DIB Tier 2 contractor)", "innovation_pill": "3-axis vault contract (cui_categorization × export_control_status × foreign_person_access_restriction) — FIRST Suite vertical with 3 orthogonal typed policy axes + DFARS 72-hour wall-clock invariant + cross_binding_refs as REQUIRED schema fields + 22-event-type Incident Card (largest in Suite)"}
+    {
+      "code": "healthtech",
+      "name": "HealthTech",
+      "tagline": "FDA SaMD + HIPAA + Section 1557 + IMDRF",
+      "canonical_buyer": "St Mary Hospital",
+      "innovation_pill": "Fitzpatrick + Section 1557 bias dims"
+    },
+    {
+      "code": "edtech",
+      "name": "EdTech",
+      "tagline": "FERPA + COPPA + IDEA / Section 504 + ESSA",
+      "canonical_buyer": "Lincoln Unified SD",
+      "innovation_pill": "ESSA subgroups + WIDA EL proficiency"
+    },
+    {
+      "code": "proptech",
+      "name": "PropTech / Real Estate",
+      "tagline": "RESPA + ECOA + Fair Housing + HMDA + GLBA + CFPB UDAAP",
+      "canonical_buyer": "Pacific Coast Mortgage",
+      "innovation_pill": "EEOC four-fifths-rule + LTV/DTI bands"
+    },
+    {
+      "code": "insurtech",
+      "name": "Insurance / InsurTech",
+      "tagline": "NAIC AI Model Bulletin + NY DFS CL 7 + CO SB 21-169",
+      "canonical_buyer": "Coastguard Insurance",
+      "innovation_pill": "actuarial-soundness-defended status"
+    },
+    {
+      "code": "hrtech",
+      "name": "HR Tech / Employment AI",
+      "tagline": "EEOC + ADA + ADEA + GINA + NYC LL 144 + IL 820 ILCS 42 + MD HB 1202",
+      "canonical_buyer": "MomentumHR Inc.",
+      "innovation_pill": "two orthogonal invariants + sub-state"
+    },
+    {
+      "code": "fintech",
+      "name": "FinTech",
+      "tagline": "CFPB + OCC/FRB/FDIC joint AI + ECOA + FCRA + GLBA + BSA/AML + Section 1071 + Section 1033",
+      "canonical_buyer": "Meridian Financial",
+      "innovation_pill": "FCRA permissible-purpose + redlining"
+    },
+    {
+      "code": "govtech",
+      "name": "GovTech / Public Sector AI",
+      "tagline": "OMB M-24-10 + AI Bill of Rights + Section 508 + Privacy Act + FOIA + NIST AI RMF + FedRAMP",
+      "canonical_buyer": "Pacific Region Federal Services Agency (PRFSA)",
+      "innovation_pill": "Federal AI Use Case Inventory + classification-clearance + Title VI LEP"
+    },
+    {
+      "code": "legaltech",
+      "name": "LegalTech / AI in the Practice of Law",
+      "tagline": "ABA Model Rules 1.1c8 + 1.6 + 3.3 + 5.3 + 5.5 + attorney-client privilege + work-product doctrine + state bar opinions + Mata v. Avianca court orders",
+      "canonical_buyer": "Anchor & Reef LLP",
+      "innovation_pill": "privilege_tier as first-class field + cross-matter-firewall + COMPAS-cautionary detector + Batson pattern"
+    },
+    {
+      "code": "energytech",
+      "name": "EnergyTech / Grid + Pipeline Operations",
+      "tagline": "NERC CIP-002 through CIP-014 + TSA SD-2021-02C + DOE EO 14028 + FERC Order 2222 + state PUC orders (CA / NY / TX / MA / IL / WA)",
+      "canonical_buyer": "Continental Grid Operator (CGO)",
+      "innovation_pill": "bes_cyber_system_categorization + ot_it_boundary cross-bound across 3 repos + CIP-008 1-hour wall-clock invariant + medical-baseline-tokenized-with-flag"
+    },
+    {
+      "code": "defensetech",
+      "name": "DefenseTech / DIB AI Tooling",
+      "tagline": "DFARS 252.204-7012/7019/7020/7021 + CMMC 2.0 L2/L3 + NIST SP 800-171 r2 + 800-172 + ITAR (22 CFR 120-130) + EAR (15 CFR 730-774) + deemed export + EO 13526 + ICD 705 + DoDI 5230.24 + CUI Notice 2020-04 + NISPOM 32 CFR 117 + FAR 52.204-21 + False Claims Act",
+      "canonical_buyer": "Stratos Aerospace (DIB Tier 2 contractor)",
+      "innovation_pill": "3-axis vault contract (cui_categorization × export_control_status × foreign_person_access_restriction) — FIRST Suite vertical with 3 orthogonal typed policy axes + DFARS 72-hour wall-clock invariant + cross_binding_refs as REQUIRED schema fields + 22-event-type Incident Card (largest in Suite)"
+    },
+    {
+      "code": "retailtech",
+      "name": "RetailTech / Consumer AI",
+      "tagline": "FTC Section 5 + 2023 algorithmic-pricing guidance + Operation AI Comply (2024) + EU Omnibus 2019/2161 Art 6a + NY S365A ATBP + NYC §22-1201 biometric ordinance + CA SB-892 + CA CPPA ADMT (eff 2026-01-01) + CCPA / CPRA + BIPA 740 ILCS 14 + IL SB 2979 (2024) + PCI DSS 4.0 + GLBA Safeguards retail-finance",
+      "canonical_buyer": "Parkway Marketplace, Inc. (US multi-channel retailer)",
+      "innovation_pill": "7 data classes × 4 tokenization methods × 6 retention envelopes INCLUDING biometric-special (365-day BIPA-aligned hard-delete) + 6-cohort bias lab (income-proxy / language-locale / device-class / time-of-day / geographic / loyalty-tenure) + 16-kind audit-stream taxonomy across 12 commerce surfaces + payment-data NEVER in audit-stream (PCI DSS scope segregation)"
+    }
   ],
   "shapes": [
-    {"code": "audit-stream",      "name": "Operator audit-stream",            "description": "Per-decision hash-chained AI-tool-access events"},
-    {"code": "state-tracker",     "name": "Operator state-tracker",            "description": "Per-jurisdiction regulatory-lifecycle ledger"},
-    {"code": "compliance-bundle", "name": "Evidence Bundle (compliance)",     "description": "Vertical's federal-floor obligation families"},
-    {"code": "bias-bundle",       "name": "Evidence Bundle (bias)",            "description": "Pre-deployment + ongoing bias / equity coverage"},
-    {"code": "incident-card",     "name": "Incident Card",                     "description": "AI consumer-harm event taxonomy + regulator-referral"},
-    {"code": "vault-contract",    "name": "Decision Card vault contract",      "description": "Tokenized / pseudonymized / cleartext access governance"}
+    {
+      "code": "audit-stream",
+      "name": "Operator audit-stream",
+      "description": "Per-decision hash-chained AI-tool-access events"
+    },
+    {
+      "code": "state-tracker",
+      "name": "Operator state-tracker",
+      "description": "Per-jurisdiction regulatory-lifecycle ledger"
+    },
+    {
+      "code": "compliance-bundle",
+      "name": "Evidence Bundle (compliance)",
+      "description": "Vertical's federal-floor obligation families"
+    },
+    {
+      "code": "bias-bundle",
+      "name": "Evidence Bundle (bias)",
+      "description": "Pre-deployment + ongoing bias / equity coverage"
+    },
+    {
+      "code": "incident-card",
+      "name": "Incident Card",
+      "description": "AI consumer-harm event taxonomy + regulator-referral"
+    },
+    {
+      "code": "vault-contract",
+      "name": "Decision Card vault contract",
+      "description": "Tokenized / pseudonymized / cleartext access governance"
+    }
   ],
   "matrix": {
-    "healthtech":  {"audit-stream": "fhir-resource-access-audit",          "state-tracker": "fda-samd-classification-board",       "compliance-bundle": "hipaa-readiness-evidence-bundle",       "bias-bundle": "clinical-bias-cohort-coverage-lab",   "incident-card": "medical-adverse-event-incident-card",      "vault-contract": "phi-vault-contract-profile"},
-    "edtech":      {"audit-stream": "student-data-access-audit-stream",    "state-tracker": "state-ai-disclosure-state-tracker",   "compliance-bundle": "ferpa-readiness-evidence-bundle",       "bias-bundle": "student-cohort-bias-coverage-lab",     "incident-card": "ai-student-record-incident-card-profile",  "vault-contract": "pii-student-vault-contract-profile"},
-    "proptech":    {"audit-stream": "mortgage-decision-record-audit-stream","state-tracker": "state-real-estate-ai-disclosure-tracker","compliance-bundle": "respa-readiness-evidence-bundle",      "bias-bundle": "mortgage-applicant-bias-coverage-lab", "incident-card": "title-chain-evidence-incident-card-profile","vault-contract": "mls-data-access-vault-contract-profile"},
-    "insurtech":   {"audit-stream": "insurance-decision-record-audit-stream","state-tracker": "state-insurance-ai-disclosure-tracker", "compliance-bundle": "naic-ai-bulletin-readiness-evidence-bundle","bias-bundle": "insurance-applicant-bias-coverage-lab","incident-card": "unfair-discrimination-incident-card-profile","vault-contract": "policyholder-data-vault-contract-profile"},
-    "hrtech":      {"audit-stream": "employment-decision-record-audit-stream","state-tracker": "state-employment-ai-disclosure-tracker","compliance-bundle": "eeoc-readiness-evidence-bundle",      "bias-bundle": "employment-candidate-bias-coverage-lab","incident-card": "employment-ai-incident-card-profile",      "vault-contract": "candidate-data-vault-contract-profile"},
-    "fintech":     {"audit-stream": "financial-decision-record-audit-stream","state-tracker": "state-financial-ai-disclosure-tracker", "compliance-bundle": "cfpb-readiness-evidence-bundle",       "bias-bundle": "financial-applicant-bias-coverage-lab","incident-card": "financial-ai-incident-card-profile",         "vault-contract": "financial-customer-data-vault-contract-profile"},
-    "govtech":     {"audit-stream": "government-decision-record-audit-stream","state-tracker": "state-government-ai-disclosure-tracker","compliance-bundle": "omb-m24-10-readiness-evidence-bundle", "bias-bundle": "government-applicant-bias-coverage-lab","incident-card": "government-ai-incident-card-profile",       "vault-contract": "citizen-data-vault-contract-profile"},
-    "legaltech":   {"audit-stream": "matter-decision-record-audit-stream",    "state-tracker": "state-bar-ai-disclosure-tracker",       "compliance-bundle": "aba-rule-1-6-readiness-evidence-bundle","bias-bundle": "legal-applicant-bias-coverage-lab",     "incident-card": "legal-ai-incident-card-profile",            "vault-contract": "attorney-client-data-vault-contract-profile"},
-    "energytech":  {"audit-stream": "grid-decision-record-audit-stream",      "state-tracker": "state-puc-ai-disclosure-tracker",       "compliance-bundle": "nerc-cip-readiness-evidence-bundle",     "bias-bundle": "grid-operator-bias-coverage-lab",        "incident-card": "grid-operations-incident-card-profile",     "vault-contract": "grid-asset-data-vault-contract-profile"},
-    "defensetech": {"audit-stream": "defense-decision-record-audit-stream",    "state-tracker": "dod-cmmc-disclosure-tracker",            "compliance-bundle": "cmmc-l2-l3-readiness-evidence-bundle",   "bias-bundle": "defense-contractor-bias-coverage-lab",   "incident-card": "defense-ai-incident-card-profile",          "vault-contract": "cui-data-vault-contract-profile"}
+    "healthtech": {
+      "audit-stream": "fhir-resource-access-audit",
+      "state-tracker": "fda-samd-classification-board",
+      "compliance-bundle": "hipaa-readiness-evidence-bundle",
+      "bias-bundle": "clinical-bias-cohort-coverage-lab",
+      "incident-card": "medical-adverse-event-incident-card",
+      "vault-contract": "phi-vault-contract-profile"
+    },
+    "edtech": {
+      "audit-stream": "student-data-access-audit-stream",
+      "state-tracker": "state-ai-disclosure-state-tracker",
+      "compliance-bundle": "ferpa-readiness-evidence-bundle",
+      "bias-bundle": "student-cohort-bias-coverage-lab",
+      "incident-card": "ai-student-record-incident-card-profile",
+      "vault-contract": "pii-student-vault-contract-profile"
+    },
+    "proptech": {
+      "audit-stream": "mortgage-decision-record-audit-stream",
+      "state-tracker": "state-real-estate-ai-disclosure-tracker",
+      "compliance-bundle": "respa-readiness-evidence-bundle",
+      "bias-bundle": "mortgage-applicant-bias-coverage-lab",
+      "incident-card": "title-chain-evidence-incident-card-profile",
+      "vault-contract": "mls-data-access-vault-contract-profile"
+    },
+    "insurtech": {
+      "audit-stream": "insurance-decision-record-audit-stream",
+      "state-tracker": "state-insurance-ai-disclosure-tracker",
+      "compliance-bundle": "naic-ai-bulletin-readiness-evidence-bundle",
+      "bias-bundle": "insurance-applicant-bias-coverage-lab",
+      "incident-card": "unfair-discrimination-incident-card-profile",
+      "vault-contract": "policyholder-data-vault-contract-profile"
+    },
+    "hrtech": {
+      "audit-stream": "employment-decision-record-audit-stream",
+      "state-tracker": "state-employment-ai-disclosure-tracker",
+      "compliance-bundle": "eeoc-readiness-evidence-bundle",
+      "bias-bundle": "employment-candidate-bias-coverage-lab",
+      "incident-card": "employment-ai-incident-card-profile",
+      "vault-contract": "candidate-data-vault-contract-profile"
+    },
+    "fintech": {
+      "audit-stream": "financial-decision-record-audit-stream",
+      "state-tracker": "state-financial-ai-disclosure-tracker",
+      "compliance-bundle": "cfpb-readiness-evidence-bundle",
+      "bias-bundle": "financial-applicant-bias-coverage-lab",
+      "incident-card": "financial-ai-incident-card-profile",
+      "vault-contract": "financial-customer-data-vault-contract-profile"
+    },
+    "govtech": {
+      "audit-stream": "government-decision-record-audit-stream",
+      "state-tracker": "state-government-ai-disclosure-tracker",
+      "compliance-bundle": "omb-m24-10-readiness-evidence-bundle",
+      "bias-bundle": "government-applicant-bias-coverage-lab",
+      "incident-card": "government-ai-incident-card-profile",
+      "vault-contract": "citizen-data-vault-contract-profile"
+    },
+    "legaltech": {
+      "audit-stream": "matter-decision-record-audit-stream",
+      "state-tracker": "state-bar-ai-disclosure-tracker",
+      "compliance-bundle": "aba-rule-1-6-readiness-evidence-bundle",
+      "bias-bundle": "legal-applicant-bias-coverage-lab",
+      "incident-card": "legal-ai-incident-card-profile",
+      "vault-contract": "attorney-client-data-vault-contract-profile"
+    },
+    "energytech": {
+      "audit-stream": "grid-decision-record-audit-stream",
+      "state-tracker": "state-puc-ai-disclosure-tracker",
+      "compliance-bundle": "nerc-cip-readiness-evidence-bundle",
+      "bias-bundle": "grid-operator-bias-coverage-lab",
+      "incident-card": "grid-operations-incident-card-profile",
+      "vault-contract": "grid-asset-data-vault-contract-profile"
+    },
+    "defensetech": {
+      "audit-stream": "defense-decision-record-audit-stream",
+      "state-tracker": "dod-cmmc-disclosure-tracker",
+      "compliance-bundle": "cmmc-l2-l3-readiness-evidence-bundle",
+      "bias-bundle": "defense-contractor-bias-coverage-lab",
+      "incident-card": "defense-ai-incident-card-profile",
+      "vault-contract": "cui-data-vault-contract-profile"
+    },
+    "retailtech": {
+      "audit-stream": "retail-decision-record-audit-stream",
+      "state-tracker": "state-retail-ai-disclosure-tracker",
+      "compliance-bundle": "ftc-algorithmic-pricing-readiness-evidence-bundle",
+      "bias-bundle": "consumer-pricing-bias-coverage-lab",
+      "incident-card": "retail-ai-incident-card-profile",
+      "vault-contract": "shopper-pii-vault-contract-profile"
+    }
   },
   "cross_cutting_invariants": [
-    {"code": "human-in-loop",        "name": "Human-in-loop on adverse-action-capable AI decisions"},
-    {"code": "adverse-action-notice","name": "Adverse-action notice + statutory reason codes"},
-    {"code": "four-fifths-rule",     "name": "Disparate-impact / bias measurement threshold"},
-    {"code": "protected-class-vault","name": "Protected-class data handling in vault contract"},
-    {"code": "regulator-referral",   "name": "Regulator-referral pathway evaluation discipline"}
+    {
+      "code": "human-in-loop",
+      "name": "Human-in-loop on adverse-action-capable AI decisions"
+    },
+    {
+      "code": "adverse-action-notice",
+      "name": "Adverse-action notice + statutory reason codes"
+    },
+    {
+      "code": "four-fifths-rule",
+      "name": "Disparate-impact / bias measurement threshold"
+    },
+    {
+      "code": "protected-class-vault",
+      "name": "Protected-class data handling in vault contract"
+    },
+    {
+      "code": "regulator-referral",
+      "name": "Regulator-referral pathway evaluation discipline"
+    }
   ],
   "invariant_matrix": {
-    "healthtech":  {"human-in-loop": "scoped",     "adverse-action-notice": "HIPAA breach + clinical doc",                "four-fifths-rule": "Section 1557-aligned",   "protected-class-vault": "HIPAA 18 Safe Harbor",                       "regulator-referral": "FDA + state DOH"},
-    "edtech":      {"human-in-loop": "N/A",         "adverse-action-notice": "FERPA RoD + state breach",                   "four-fifths-rule": "ESSA subgroup",          "protected-class-vault": "FERPA 7 + COPPA 10",                          "regulator-referral": "DoE OCR + FTC + state-AG"},
-    "proptech":    {"human-in-loop": "universal",   "adverse-action-notice": "ECOA 1002.9 30-day + RESPA",                "four-fifths-rule": "canonical (EEOC)",        "protected-class-vault": "ECOA + Fair Housing",                         "regulator-referral": "CFPB + DOJ + HUD + state DFPI/DFS"},
-    "insurtech":   {"human-in-loop": "scoped+capable","adverse-action-notice": "FCRA §615 + state DOI",                    "four-fifths-rule": "applicable + actuarial-soundness", "protected-class-vault": "CO SB 21-169 + NOT model input",        "regulator-referral": "State DOI + NAIC MCAS + 6 pathways"},
-    "hrtech":      {"human-in-loop": "scoped+capable","adverse-action-notice": "EEOC reconciled adverse-action",            "four-fifths-rule": "EEOC + UGESP 2-SD",      "protected-class-vault": "EEOC/OFCCP segregation",                     "regulator-referral": "EEOC + state CR + NYC DCWP + OFCCP + 7 pathways"},
-    "fintech":     {"human-in-loop": "scoped+capable","adverse-action-notice": "ECOA 1002.9 + FCRA §615",                   "four-fifths-rule": "EEOC + business-necessity + redlining", "protected-class-vault": "ECOA + Section 1071 firewall + NOT input", "regulator-referral": "CFPB + OCC/FRB/FDIC/NCUA + 9 pathways"},
-    "govtech":     {"human-in-loop": "scoped+capable+three-invariants","adverse-action-notice": "OMB M-24-10 §5(d) human-review + statutory appeals (5 USC §555)","four-fifths-rule": "EEOC where applicable + Title VI LEP + OMB M-24-10 §5(d) impact-assessment","protected-class-vault": "OMB M-24-10 §3(a) Federal AI Use Case Inventory + EEOC/OFCCP segregation + REQUIRED ai_use_case_inventory_block in Decision Card","regulator-referral": "Agency Civil Rights Office + OMB + OIG + GAO + DOJ Civil Rights + Section 508 OMB + congressional + state-AG + Federal AI Use Case Inventory correction + 10 pathways"},
-    "legaltech":   {"human-in-loop": "scoped+capable+supervising-attorney-bar-id-required+three-invariants","adverse-action-notice": "ABA Rule 1.4 client notification + Rule 3.3 tribunal disclosure where required","four-fifths-rule": "Title VI + Sixth Amendment + Batson v. Kentucky + COMPAS-cautionary two-sided asymmetry detector","protected-class-vault": "privilege_tier first-class field + cross-matter-firewall + opposing-party-quarantine + no-training-data-use vendor contract clause REQUIRED","regulator-referral": "outside ethics counsel + state bar disciplinary counsel + court disclosure + professional liability insurer + criminal-defense Sixth-Amendment effective-assistance + 10 pathways with REQUIRED ed25519 signature"},
-    "energytech":  {"human-in-loop": "HIGH-IMPACT+OT-required+NERC-certified-on-transmission-switching+three-invariants","adverse-action-notice": "CIP-008 1-hour wall-clock to E-ISAC + TSA SD 12-hour wall-clock to CISA+TSA (two parallel regulatory clocks, both as required drill records)","four-fifths-rule": "POPULATION-LEVEL equity (not individual decisioning) — EPA Title VI EJ + Justice40 + state PUC EJ orders; 7-day freshness window for load shed (shortest in Suite)","protected-class-vault": "bes_cyber_system_categorization + ot_it_boundary cross-bound across 3 repos + bcsi-protected-cip-011 + medical-baseline-tokenized-with-flag + 5 unique runtime invariants incl ot-it-data-diode-enforcement + critical-medical-equipment flag preservation","regulator-referral": "NERC E-ISAC + CISA+TSA + DOE CESER + FERC + ISO/RTO Market Monitor + state PUC + EPA EJ + DOJ Civil Rights + NERC regional entity + AI vendor + energy-cyber insurer + FBI Cyber Division — 12 pathways (most extensive in Suite) with regulatory-clock meta-violations as first-class event types"},
-    "defensetech": {"human-in-loop": "us-person-verification-per-event-on-ITAR + secret-clearance-min-on-CLASSIFIED + ts-sci-clearance-on-SCI + FSO-cosign-on-CLASSIFIED+ — 4 enforcement-mode dimensions, axis-intersection at runtime","adverse-action-notice": "DFARS 252.204-7012(c)(1)(ii) 72-hour wall-clock report to dibnet.dod.mil (SECOND Suite vertical with numeric wall-clock invariant; FIRST was EnergyTech CIP-008 1-hour) + DDTC voluntary disclosure (optional, ITAR breach) + BIS voluntary disclosure (optional, EAR breach) + FSO notification (always, on cleared facility)","four-fifths-rule": "OFCCP 4/5ths-rule on DIB workforce dimensions + VEVRAA protected-veteran preference + Section 503 7%-utilization goal + EO 12968 + 32 CFR 147 adjudicative-guidelines disparity tracking + NISPOM insider-threat-flag-rate per-1000 + SBA SB/SDB/VOSB/SDVOSB flow-down coverage % — 15 dimensions × 8 metric kinds","protected-class-vault": "FIRST Suite vault contract with 3 orthogonal typed policy axes (cui_categorization 9 tiers × export_control_status 4 tiers × foreign_person_access_restriction 5 tiers) — resolvePolicy() intersects all 3 axes at runtime. cross_binding_refs as REQUIRED schema fields publish sibling repos (audit-stream + evidence-bundle + incident-card). vs LegalTech 1-axis, EnergyTech 2-axis, every other vertical 1-axis equivalent","regulator-referral": "DoD CIO (DFARS 7012 cyber incident via dibnet.dod.mil) + Cyber AB (CMMC ecosystem) + DIBCAC (DCMA government-led L3 assessment) + DDTC (ITAR voluntary disclosure) + BIS (EAR voluntary disclosure + Entity List screening) + NIST (standards-incorporation-by-reference) + GSA (FAR + Schedule + FedRAMP joint authorization) + DCMA (CPSR + supplier surveillance) + DCSA (NISPOM + personnel + facility clearance) + NARA-ISOO (CUI Registry + CUI Notice 2020-04) — 10 federal authorities × 8 distinct enforcement modes (most diverse state-tracker in Suite). 22 event types on Incident Card — LARGEST Incident Card profile in Suite"}
+    "healthtech": {
+      "human-in-loop": "scoped",
+      "adverse-action-notice": "HIPAA breach + clinical doc",
+      "four-fifths-rule": "Section 1557-aligned",
+      "protected-class-vault": "HIPAA 18 Safe Harbor",
+      "regulator-referral": "FDA + state DOH"
+    },
+    "edtech": {
+      "human-in-loop": "N/A",
+      "adverse-action-notice": "FERPA RoD + state breach",
+      "four-fifths-rule": "ESSA subgroup",
+      "protected-class-vault": "FERPA 7 + COPPA 10",
+      "regulator-referral": "DoE OCR + FTC + state-AG"
+    },
+    "proptech": {
+      "human-in-loop": "universal",
+      "adverse-action-notice": "ECOA 1002.9 30-day + RESPA",
+      "four-fifths-rule": "canonical (EEOC)",
+      "protected-class-vault": "ECOA + Fair Housing",
+      "regulator-referral": "CFPB + DOJ + HUD + state DFPI/DFS"
+    },
+    "insurtech": {
+      "human-in-loop": "scoped+capable",
+      "adverse-action-notice": "FCRA §615 + state DOI",
+      "four-fifths-rule": "applicable + actuarial-soundness",
+      "protected-class-vault": "CO SB 21-169 + NOT model input",
+      "regulator-referral": "State DOI + NAIC MCAS + 6 pathways"
+    },
+    "hrtech": {
+      "human-in-loop": "scoped+capable",
+      "adverse-action-notice": "EEOC reconciled adverse-action",
+      "four-fifths-rule": "EEOC + UGESP 2-SD",
+      "protected-class-vault": "EEOC/OFCCP segregation",
+      "regulator-referral": "EEOC + state CR + NYC DCWP + OFCCP + 7 pathways"
+    },
+    "fintech": {
+      "human-in-loop": "scoped+capable",
+      "adverse-action-notice": "ECOA 1002.9 + FCRA §615",
+      "four-fifths-rule": "EEOC + business-necessity + redlining",
+      "protected-class-vault": "ECOA + Section 1071 firewall + NOT input",
+      "regulator-referral": "CFPB + OCC/FRB/FDIC/NCUA + 9 pathways"
+    },
+    "govtech": {
+      "human-in-loop": "scoped+capable+three-invariants",
+      "adverse-action-notice": "OMB M-24-10 §5(d) human-review + statutory appeals (5 USC §555)",
+      "four-fifths-rule": "EEOC where applicable + Title VI LEP + OMB M-24-10 §5(d) impact-assessment",
+      "protected-class-vault": "OMB M-24-10 §3(a) Federal AI Use Case Inventory + EEOC/OFCCP segregation + REQUIRED ai_use_case_inventory_block in Decision Card",
+      "regulator-referral": "Agency Civil Rights Office + OMB + OIG + GAO + DOJ Civil Rights + Section 508 OMB + congressional + state-AG + Federal AI Use Case Inventory correction + 10 pathways"
+    },
+    "legaltech": {
+      "human-in-loop": "scoped+capable+supervising-attorney-bar-id-required+three-invariants",
+      "adverse-action-notice": "ABA Rule 1.4 client notification + Rule 3.3 tribunal disclosure where required",
+      "four-fifths-rule": "Title VI + Sixth Amendment + Batson v. Kentucky + COMPAS-cautionary two-sided asymmetry detector",
+      "protected-class-vault": "privilege_tier first-class field + cross-matter-firewall + opposing-party-quarantine + no-training-data-use vendor contract clause REQUIRED",
+      "regulator-referral": "outside ethics counsel + state bar disciplinary counsel + court disclosure + professional liability insurer + criminal-defense Sixth-Amendment effective-assistance + 10 pathways with REQUIRED ed25519 signature"
+    },
+    "energytech": {
+      "human-in-loop": "HIGH-IMPACT+OT-required+NERC-certified-on-transmission-switching+three-invariants",
+      "adverse-action-notice": "CIP-008 1-hour wall-clock to E-ISAC + TSA SD 12-hour wall-clock to CISA+TSA (two parallel regulatory clocks, both as required drill records)",
+      "four-fifths-rule": "POPULATION-LEVEL equity (not individual decisioning) — EPA Title VI EJ + Justice40 + state PUC EJ orders; 7-day freshness window for load shed (shortest in Suite)",
+      "protected-class-vault": "bes_cyber_system_categorization + ot_it_boundary cross-bound across 3 repos + bcsi-protected-cip-011 + medical-baseline-tokenized-with-flag + 5 unique runtime invariants incl ot-it-data-diode-enforcement + critical-medical-equipment flag preservation",
+      "regulator-referral": "NERC E-ISAC + CISA+TSA + DOE CESER + FERC + ISO/RTO Market Monitor + state PUC + EPA EJ + DOJ Civil Rights + NERC regional entity + AI vendor + energy-cyber insurer + FBI Cyber Division — 12 pathways (most extensive in Suite) with regulatory-clock meta-violations as first-class event types"
+    },
+    "defensetech": {
+      "human-in-loop": "us-person-verification-per-event-on-ITAR + secret-clearance-min-on-CLASSIFIED + ts-sci-clearance-on-SCI + FSO-cosign-on-CLASSIFIED+ — 4 enforcement-mode dimensions, axis-intersection at runtime",
+      "adverse-action-notice": "DFARS 252.204-7012(c)(1)(ii) 72-hour wall-clock report to dibnet.dod.mil (SECOND Suite vertical with numeric wall-clock invariant; FIRST was EnergyTech CIP-008 1-hour) + DDTC voluntary disclosure (optional, ITAR breach) + BIS voluntary disclosure (optional, EAR breach) + FSO notification (always, on cleared facility)",
+      "four-fifths-rule": "OFCCP 4/5ths-rule on DIB workforce dimensions + VEVRAA protected-veteran preference + Section 503 7%-utilization goal + EO 12968 + 32 CFR 147 adjudicative-guidelines disparity tracking + NISPOM insider-threat-flag-rate per-1000 + SBA SB/SDB/VOSB/SDVOSB flow-down coverage % — 15 dimensions × 8 metric kinds",
+      "protected-class-vault": "FIRST Suite vault contract with 3 orthogonal typed policy axes (cui_categorization 9 tiers × export_control_status 4 tiers × foreign_person_access_restriction 5 tiers) — resolvePolicy() intersects all 3 axes at runtime. cross_binding_refs as REQUIRED schema fields publish sibling repos (audit-stream + evidence-bundle + incident-card). vs LegalTech 1-axis, EnergyTech 2-axis, every other vertical 1-axis equivalent",
+      "regulator-referral": "DoD CIO (DFARS 7012 cyber incident via dibnet.dod.mil) + Cyber AB (CMMC ecosystem) + DIBCAC (DCMA government-led L3 assessment) + DDTC (ITAR voluntary disclosure) + BIS (EAR voluntary disclosure + Entity List screening) + NIST (standards-incorporation-by-reference) + GSA (FAR + Schedule + FedRAMP joint authorization) + DCMA (CPSR + supplier surveillance) + DCSA (NISPOM + personnel + facility clearance) + NARA-ISOO (CUI Registry + CUI Notice 2020-04) — 10 federal authorities × 8 distinct enforcement modes (most diverse state-tracker in Suite). 22 event types on Incident Card — LARGEST Incident Card profile in Suite"
+    },
+    "retailtech": {
+      "human-in-loop": "human_pricing_reviewer_required on bias-watchlist-band personalized-pricing events + human_review_required on every retail.biometric.face-template-matched + retail.refund.discrimination-claim. No federal ECOA-style adverse-action statute — driven by FTC §5 + state UDAP exposure.",
+      "adverse-action-notice": "EU Omnibus 2019/2161 Art 6a personalized-pricing disclosure modal (REQUIRED inline via pricing_transparency.disclosure_artifact_url) + CCPA/CPRA right-to-explanation on Automated Decisionmaking + per-state retail AI disclosure obligations (NY S365A ATBP, CA SB-892, CO ADMT). RetailTech-unique: no federal statutory equivalent to ECOA 1002.9 — non-disclosure is FTC §5 deceptive-practices exposure rather than a denied right.",
+      "four-fifths-rule": "FTC §5 disparate-impact framing under 2023 algorithmic-pricing guidance. 6 cohort dimensions (income-proxy ZIP-median + language-locale Accept-Language + device-class + time-of-day + geographic + loyalty-tenure) × 4-band verdict (within-tolerance 0.95-1.05× / watchlist / investigate / remediate). RetailTech-unique: time-of-day + loyalty-tenure proxy customer-acquisition cohorts where pricing can become discriminatory — dimensions a strict protected-class lens misses.",
+      "protected-class-vault": "7 data classes × 4 tokenization methods × 6 retention envelopes. RetailTech-unique: biometric-special envelope (365-day BIPA-aligned hard-delete on T+366); location-data redacted-by-default with opt-in fine-geo as CCPA Sensitive PI; payment-data NEVER appears in audit-stream events (PCI DSS scope segregation); under-18 tokenization tier; data-broker-relationship disclosure obligation; CCPA Do-Not-Sell + Global Privacy Control honor.",
+      "regulator-referral": "12 RetailTech event types (pricing-discrim, recommendation-bias-surface, fraud-false-positive-harm, biometric-misidentification, BIPA consent-violation, refund-discrimination, ad-personalization-harm, dark-patterns-enforcement, deceptive-AI-output, minor-targeting-violation, data-broker-exposure, loyalty-tier-discrim) × 8 reason codes × 4-band severity. Referral pathways: FTC §5 complaint, state AG inquiry, EU AI Act Art 73 serious-incident report. RetailTech-unique: BIPA per-scan-stacking remediation context post-IL SB 2979 (2024)."
+    }
   },
   "horizontal_tools": [
     {
       "code": "router",
       "name": "kg-suite-vertical-router",
-      "tagline": "Routes any Suite artifact to the right vertical-specific verification across 10 verticals + dual-shape (spec + ref-impl)",
+      "tagline": "Routes any Suite artifact to the right vertical-specific verification across 11 verticals + dual-shape (spec + ref-impl)",
       "url": "https://github.com/mizcausevic-dev/kg-suite-vertical-router",
       "cli": "kg-suite-route artifact.json"
     },
@@ -77,15 +329,75 @@
     }
   ],
   "reference_implementations": [
-    {"vertical_code": "healthtech",  "repo": "fhir-resource-access-audit-reference",          "ref_impl_kind_prefix": "fhir.",       "wall_clock_pattern": "n/a",                                 "headline_invariant": "HIPAA Safe-Harbor vault contract + hash-chained FHIR resource access events re-validated against spec JSON Schema in CI"},
-    {"vertical_code": "edtech",      "repo": "student-data-access-audit-stream-reference",     "ref_impl_kind_prefix": "edtech.",     "wall_clock_pattern": "must-precede-event",                    "headline_invariant": "FERPA basis enumeration (34 CFR Part 99) + COPPA verifiable parental consent must precede event timestamp for student_age < 13 (16 CFR §312.4)"},
-    {"vertical_code": "proptech",    "repo": "mortgage-decision-record-audit-stream-reference","ref_impl_kind_prefix": "proptech.",   "wall_clock_pattern": "anchored-on-completed-application",     "headline_invariant": "UNIVERSAL human-underwriter rule (only Suite vertical with universal-not-scoped human gate) + ECOA Reg B 30-day adverse-action notice anchored on application_completed_at per 12 CFR §1002.9"},
-    {"vertical_code": "insurtech",   "repo": "insurance-decision-record-audit-stream-reference","ref_impl_kind_prefix": "insurtech.",  "wall_clock_pattern": "bounded-backward-window",                "headline_invariant": "Scoped human-adjudicator on adverse-action-capable + adverse recommendation + NAIC Model Bulletin on AI 90-day backward-bounded bias-monitoring window (must precede event)"},
-    {"vertical_code": "hrtech",      "repo": "employment-decision-record-audit-stream-reference","ref_impl_kind_prefix": "hrtech.",     "wall_clock_pattern": "backward-before-event",                   "headline_invariant": "NYC LL 144 14-day backward-before-event candidate-notice window + EEOC four-fifths-rule bias-audit timestamp bound"},
-    {"vertical_code": "fintech",     "repo": "financial-decision-record-audit-stream-reference","ref_impl_kind_prefix": "fintech.",    "wall_clock_pattern": "anchored-on-event",                       "headline_invariant": "FCRA §604 permissible-purpose enumeration on credit-bureau resource pulls + ECOA timing-of-credit-decision binding"},
-    {"vertical_code": "govtech",     "repo": "government-decision-record-audit-stream-reference","ref_impl_kind_prefix": "govtech.",   "wall_clock_pattern": "must-precede-event",                     "headline_invariant": "OMB M-24-10 impact-assessment completed before deployment precondition + rights-impacting vs safety-impacting disambiguation"},
-    {"vertical_code": "legaltech",   "repo": "matter-decision-record-audit-stream-reference",   "ref_impl_kind_prefix": "legaltech.",  "wall_clock_pattern": "n/a",                                   "headline_invariant": "Privilege-tier consistency + engagement-letter binding + citation-validation-before-production-ready (THREE simultaneous invariants — only Suite ref impl with that density)"},
-    {"vertical_code": "energytech",  "repo": "grid-decision-record-audit-stream-reference",     "ref_impl_kind_prefix": "energytech.", "wall_clock_pattern": "forward-from-event",                     "headline_invariant": "NERC CIP-008 1-hour forward cyber-incident reporting wall clock (shortest in the Suite catalog)"},
-    {"vertical_code": "defensetech", "repo": "defense-decision-record-audit-stream-reference",  "ref_impl_kind_prefix": "defensetech.","wall_clock_pattern": "forward-from-event",                      "headline_invariant": "DFARS 252.204-7012(c)(1)(ii) 72-hour forward cyber-incident clock + CUI 3-axis vault contract cross-binding (cui_categorization × export_control_status × foreign_person_access_restriction)"}
+    {
+      "vertical_code": "healthtech",
+      "repo": "fhir-resource-access-audit-reference",
+      "ref_impl_kind_prefix": "fhir.",
+      "wall_clock_pattern": "n/a",
+      "headline_invariant": "HIPAA Safe-Harbor vault contract + hash-chained FHIR resource access events re-validated against spec JSON Schema in CI"
+    },
+    {
+      "vertical_code": "edtech",
+      "repo": "student-data-access-audit-stream-reference",
+      "ref_impl_kind_prefix": "edtech.",
+      "wall_clock_pattern": "must-precede-event",
+      "headline_invariant": "FERPA basis enumeration (34 CFR Part 99) + COPPA verifiable parental consent must precede event timestamp for student_age < 13 (16 CFR §312.4)"
+    },
+    {
+      "vertical_code": "proptech",
+      "repo": "mortgage-decision-record-audit-stream-reference",
+      "ref_impl_kind_prefix": "proptech.",
+      "wall_clock_pattern": "anchored-on-completed-application",
+      "headline_invariant": "UNIVERSAL human-underwriter rule (only Suite vertical with universal-not-scoped human gate) + ECOA Reg B 30-day adverse-action notice anchored on application_completed_at per 12 CFR §1002.9"
+    },
+    {
+      "vertical_code": "insurtech",
+      "repo": "insurance-decision-record-audit-stream-reference",
+      "ref_impl_kind_prefix": "insurtech.",
+      "wall_clock_pattern": "bounded-backward-window",
+      "headline_invariant": "Scoped human-adjudicator on adverse-action-capable + adverse recommendation + NAIC Model Bulletin on AI 90-day backward-bounded bias-monitoring window (must precede event)"
+    },
+    {
+      "vertical_code": "hrtech",
+      "repo": "employment-decision-record-audit-stream-reference",
+      "ref_impl_kind_prefix": "hrtech.",
+      "wall_clock_pattern": "backward-before-event",
+      "headline_invariant": "NYC LL 144 14-day backward-before-event candidate-notice window + EEOC four-fifths-rule bias-audit timestamp bound"
+    },
+    {
+      "vertical_code": "fintech",
+      "repo": "financial-decision-record-audit-stream-reference",
+      "ref_impl_kind_prefix": "fintech.",
+      "wall_clock_pattern": "anchored-on-event",
+      "headline_invariant": "FCRA §604 permissible-purpose enumeration on credit-bureau resource pulls + ECOA timing-of-credit-decision binding"
+    },
+    {
+      "vertical_code": "govtech",
+      "repo": "government-decision-record-audit-stream-reference",
+      "ref_impl_kind_prefix": "govtech.",
+      "wall_clock_pattern": "must-precede-event",
+      "headline_invariant": "OMB M-24-10 impact-assessment completed before deployment precondition + rights-impacting vs safety-impacting disambiguation"
+    },
+    {
+      "vertical_code": "legaltech",
+      "repo": "matter-decision-record-audit-stream-reference",
+      "ref_impl_kind_prefix": "legaltech.",
+      "wall_clock_pattern": "n/a",
+      "headline_invariant": "Privilege-tier consistency + engagement-letter binding + citation-validation-before-production-ready (THREE simultaneous invariants — only Suite ref impl with that density)"
+    },
+    {
+      "vertical_code": "energytech",
+      "repo": "grid-decision-record-audit-stream-reference",
+      "ref_impl_kind_prefix": "energytech.",
+      "wall_clock_pattern": "forward-from-event",
+      "headline_invariant": "NERC CIP-008 1-hour forward cyber-incident reporting wall clock (shortest in the Suite catalog)"
+    },
+    {
+      "vertical_code": "defensetech",
+      "repo": "defense-decision-record-audit-stream-reference",
+      "ref_impl_kind_prefix": "defensetech.",
+      "wall_clock_pattern": "forward-from-event",
+      "headline_invariant": "DFARS 252.204-7012(c)(1)(ii) 72-hour forward cyber-incident clock + CUI 3-axis vault contract cross-binding (cui_categorization × export_control_status × foreign_person_access_restriction)"
+    }
   ]
 }
